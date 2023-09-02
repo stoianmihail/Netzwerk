@@ -122,9 +122,9 @@ std::pair<long double, std::vector<RangeNode>> Optimizer<BitSet>::runLocalLinDP(
   return {cost, sol};
 }
 
-template class Optimizer<BitSet64>;
-template class Optimizer<BitSet128>;
-template class Optimizer<BitSet256>;
-template class Optimizer<BitSet512>;
-template class Optimizer<BitSet1024>;
-template class Optimizer<BitSet2048>;
+//template class Optimizer<BitSet64>;
+//template class Optimizer<BitSet128>;
+//template class Optimizer<BitSet256>;
+//template class Optimizer<BitSet512>;
+//template class Optimizer<BitSet1024>;
+//template class Optimizer<BitSet2048>;
