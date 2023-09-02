@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
 
-# SET (CMAKE_CXX_COMPILER "/usr/bin/clang++" CACHE STRING "C++ compiler" FORCE)
-
 project (netzwerk)
 
 set(CMAKE_CXX_STANDARD 20)

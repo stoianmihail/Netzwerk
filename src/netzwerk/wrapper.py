@@ -147,7 +147,16 @@ def _transform(graph, output, size_dict):
   return len(graph), len(edges), c_edges, c_tree_edges, c_edge_costs, c_tree_edge_costs, c_open_costs
 
 # Register optimizers.
-libname = fetch_abs_path("build/libnetzwerk.so")
+
+import platform
+
+relpaths = {
+  'Linux' : 'libnetzwerk.so',
+  'Darwin' : 'libnetzwerk.dylib',
+  'Windows' : 'libnetzwerk.dll'
+}
+
+libname = fetch_abs_path(f'build/{relpaths[platform.system()]}')
 netzwerk = ctypes.CDLL(libname)
 netzwerk.tensor_ikkbz.restype = WrappedSequence
 netzwerk.lindp.restype = WrappedSequence

@@ -1,32 +1,32 @@
 
 import opt_einsum as oe
 import multiprocessing
-import framework.wrapper as framework
+import netzwerk.wrapper as netzwerk
 
 class TensorIKKBZ(oe.paths.PathOptimizer):
   def __call__(self, inputs, output, size_dict, memory_limit=None):
     print(f'%%%%%%%%%%%%%% TensorIKKBZ %%%%%%%%%%%%%%')
-    return framework.contraction_order(inputs, output, size_dict, 'tensor-ikkbz')
+    return netzwerk.contraction_order(inputs, output, size_dict, 'tensor-ikkbz')
 
 class LinDP(oe.paths.PathOptimizer):
   def __call__(self, inputs, output, size_dict, memory_limit=None):
     print(f'%%%%%%%%%%%%%% LinDP %%%%%%%%%%%%%%')
-    return framework.contraction_order(inputs, output, size_dict, 'lindp')
+    return netzwerk.contraction_order(inputs, output, size_dict, 'lindp')
 
 class Greedy(oe.paths.PathOptimizer):
   def __call__(self, inputs, output, size_dict, memory_limit=None):
     print(f'%%%%%%%%%%%%%% Greedy %%%%%%%%%%%%%%')
-    return framework.contraction_order(inputs, output, size_dict, 'goo')
+    return netzwerk.contraction_order(inputs, output, size_dict, 'goo')
 
 class ParallelTensorIKKBZ(oe.paths.PathOptimizer):
   def __call__(self, inputs, output, size_dict, memory_limit=None):
     print(f'%%%%%%%%%%%%%% TensorIKKBZ [parallel] %%%%%%%%%%%%%%')
-    return framework.contraction_order(inputs, output, size_dict, 'tensor-ikkbz-parallel')
+    return netzwerk.contraction_order(inputs, output, size_dict, 'tensor-ikkbz-parallel')
 
 class ParallelLinDP(oe.paths.PathOptimizer):
   def __call__(self, inputs, output, size_dict, memory_limit=None):
     print(f'%%%%%%%%%%%%%% LinDP [parallel] %%%%%%%%%%%%%%')
-    return framework.contraction_order(inputs, output, size_dict, 'lindp-parallel')
+    return netzwerk.contraction_order(inputs, output, size_dict, 'lindp-parallel')
 
 class CustomRandomGreedy(oe.paths.PathOptimizer):
   def __call__(self, inputs, output, size_dict, memory_limit=None):
@@ -79,7 +79,7 @@ from cotengra.core import ContractionTree
 
 def general_optimizer(meta_fn, algo, inputs, output, size_dict):
   print(f'%%%%%%%%%%%%%% {algo.upper()} %%%%%%%%%%%%%%')
-  ssa_path = framework.contraction_order(inputs, output, size_dict, algo, use_ssa=True)
+  ssa_path = netzwerk.contraction_order(inputs, output, size_dict, algo, use_ssa=True)
   return meta_fn(inputs, output, size_dict, ssa_path=ssa_path)
 
 # Register the algorithms.
