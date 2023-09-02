@@ -11,13 +11,10 @@ size=${3:--1}
 
 echo Parsing $dir
 
-NUM_CORES=$(nproc --all)
-MAX_JOBS=1 # $(($NUM_CORES * 2))
 SUB='.qsim'
 
 function run_process() {
   python3 src/bench.py -p $package -f $dir/$1 -s $size
-  # sleep 0
 }
 
 for file in $(ls $dir); do
@@ -31,11 +28,6 @@ for file in $(ls $dir); do
     # Synthetic tensor network.
     if [ $((${arrIN[0]} + 0)) -le $size ] || [ $size -eq -1 ]; then
       run_process $file
-      # &
-      # while [ `jobs | wc -l` -ge $MAX_JOBS ]
-      # do
-      #   sleep 0
-      # done
     fi
   fi
 done;
