@@ -1,0 +1,23 @@
+name: test
+channels:
+  - conda-forge
+dependencies:
+    # Base depends
+  - python
+  - numpy
+  - nomkl
+
+    # Backends
+  - tensorflow-base
+  - dask
+  - sparse
+  - theano
+  - pytorch-cpu
+  - autograd
+  - jax
+
+    # Testing
+  - pytest
+  - codecov
+  - pytest-cov
+  - mypy

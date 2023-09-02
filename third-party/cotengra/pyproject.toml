@@ -1,0 +1,38 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools>=45",
+    "versioneer[toml]"
+]
+
+[tool.setuptools_scm]
+write_to = "cotengra/_version.py"
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+addopts = "--cov=cotengra --cov-report term-missing --cov-report xml:coverage.xml --verbose --durations=10"
+filterwarnings = "once"
+
+[tool.coverage.run]
+omit = ["*/cotengra/experimental/*"]
+source = ["cotengra"]
+
+[tool.pylama]
+ignore = "C901"
+max_line_length = 79
+
+[tool.ruff]
+line-length = 79
+target-version = "py38"
+ignore = ["E741"]
+
+[tool.black]
+line-length = 79
+target-version = ['py38']
+
+[tool.versioneer]
+VCS = "git"
+style = "pep440"
+versionfile_source = "cotengra/_version.py"
+versionfile_build = "cotengra/_version.py"
+tag_prefix = ""

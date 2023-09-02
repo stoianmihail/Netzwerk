@@ -28,7 +28,7 @@ cd ../..
 
 ### Setup our framework
 
-Build the shared library:
+Build the shared library, which requires [`CMake`](https://cmake.org).
 
 ```
 cd src/framework
