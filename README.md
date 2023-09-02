@@ -31,7 +31,7 @@ cd ../..
 Build the shared library, which requires [`CMake`](https://cmake.org).
 
 ```
-cd src/framework
+cd src/netzwerk
 mkdir -p build
 cd build
 cmake ..

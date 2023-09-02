@@ -7,8 +7,8 @@ from util import ChronoTool, parse_filename, parse_net, format_elems, debug_elem
 
 import jax
 
-# Import the framework.
-import framework
+# Import netzwerk.
+import netzwerk
 
 # Which tensor networks are trees?
 isTree = {
@@ -66,7 +66,7 @@ class Benchmark:
 
   def run_opt_einsum(self, edges, open_legs, eq, arrays, optimizer, tool):
     tool.log(f'[optimize] {optimizer}')
-    path, path_info = oe.contract_path(eq, *arrays, optimize=framework.fetch_optimizer(optimizer))
+    path, path_info = oe.contract_path(eq, *arrays, optimize=netzwerk.fetch_optimizer(optimizer))
     tool.finish()
     
     # Contract, if requested.
@@ -250,7 +250,7 @@ def bench(file, package, size, contract):
 
   # And run the optimizers.
   costs = {}
-  for opt in framework.fetch_package_optimizers(package):
+  for opt in netzwerk.fetch_package_optimizers(package):
     print(f'Optimizer: {opt}')
 
     # Deny exponential optimizers if the number of legs is large.
