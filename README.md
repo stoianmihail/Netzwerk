@@ -1,6 +1,9 @@
 # $\textcolor{#0065bd}{\texttt{Netzwerk}}$
 
-A collection of state-of-the-art contraction ordering algorithms
+A collection of state-of-the-art contraction ordering algorithms. Plug-in for [`opt_einsum`](https://github.com/dgasmith/opt_einsum) and [`cotengra`](https://github.com/jcmgray/cotengra).
+- Optimal and near-optimal algorithms for several classes of tensor networks
+- Based on the latest research in contraction ordering and database join ordering
+- Careful C++ implementations
 
 ## Description
 
@@ -8,26 +11,9 @@ $\large \textcolor{#0065bd}{\texttt{Netzwerk}}$ hosts optimal and near-optimal a
 
 * $\large \texttt{TensorIKKBZ}$: Optimal linear contraction orders for tree tensor networks
 * $\large \texttt{LinDP}$: Optimal general contraction trees _given_ the linear contraction orders of $\large \texttt{TensorIKKBZ}$
+* Coming soon..
 
 ## Setup
-
-### Setup `opt_einsum`
-
-```
-cd third-party/opt_einsum
-pip3 install -e .
-cd ../..
-```
-
-### Setup `cotengra`
-
-```
-cd third-party/cotengra
-pip3 install -e .
-cd ../..
-```
-
-### Setup $\normalsize \textcolor{#0065bd}{\texttt{netzwerk}}$
 
 Build the shared library, which requires [`CMake`](https://cmake.org).
 
@@ -46,10 +32,6 @@ cd ../../
 versioneer install
 pip3 install -e .
 ```
-
-### Setup `kahypar`
-
-Follow the instructions provided [here](https://kahypar.org/). In particular, consider installing manually, as working directly with the `pip` package, while easy to install, may throw errors, e.g., `concurrent.futures.process.BrokenProcessPool`.
 
 ## Generation
 
