@@ -1,12 +1,13 @@
-# Netzwerk
+# $\textcolor{#0065bd}{\texttt{Netzwerk}}$
 
 A collection of state-of-the-art contraction ordering algorithms
 
 ## Description
 
-Netzwork hosts optimal and near-optimal algorithms for tensor network contraction ordering:
+$\textcolor{#0065bd}{\texttt{Netzwerk}}$ hosts optimal and near-optimal algorithms for tensor network contraction ordering:
 
-* $\texttt{TensorIKKBZ}$: Optimal linear contraction orders for tree tensor networks
+* $\texttt{TensorIKKBZ}$: Optimal linear contraction orders for tree tensor networks (official implementation)
+* $\texttt{LinDP}$: Optimal general contraction trees _given_ the linear contraction orders of $\texttt{TensorIKKBZ}$ (official implementation)
 
 ## Setup
 
@@ -26,7 +27,7 @@ pip3 install -e .
 cd ../..
 ```
 
-### Setup our framework
+### Setup $\textcolor{#0065bd}{\texttt{netzwerk}}$
 
 Build the shared library, which requires [`CMake`](https://cmake.org).
 
