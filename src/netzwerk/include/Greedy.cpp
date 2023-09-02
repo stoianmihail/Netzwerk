@@ -73,9 +73,9 @@ const std::shared_ptr<typename Optimizer<BitSet>::Plan> Optimizer<BitSet>::runGr
   return finalPlan;
 }
 
-template class Optimizer<BitSet64>;
-template class Optimizer<BitSet128>;
-template class Optimizer<BitSet256>;
-template class Optimizer<BitSet512>;
-template class Optimizer<BitSet1024>;
-template class Optimizer<BitSet2048>;
+//template class Optimizer<BitSet64>;
+//template class Optimizer<BitSet128>;
+//template class Optimizer<BitSet256>;
+//template class Optimizer<BitSet512>;
+//template class Optimizer<BitSet1024>;
+//template class Optimizer<BitSet2048>;
