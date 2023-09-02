@@ -142,6 +142,6 @@ public:
   Sequence* translatePlanToSequence(const std::shared_ptr<Plan> solution);
 };
 
-#include "Optimizer.inl"
+#include "Optimizer.tcc"
 
 #endif

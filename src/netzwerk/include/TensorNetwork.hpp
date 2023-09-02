@@ -231,6 +231,6 @@ template class TensorNetwork<BitSet512>;
 template class TensorNetwork<BitSet1024>;
 template class TensorNetwork<BitSet2048>;
 
-#include "TensorNetwork.inl"
+#include "TensorNetwork.tcc"
 
 #endif
