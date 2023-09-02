@@ -83,7 +83,7 @@ class Benchmark:
     inputs, output, size_dict = translate_edges(len(arrays), edges, open_legs)
     
     # Create the optimizer.
-    from cotengra.hyper import HyperOptimizer
+    from cotengra.hyperoptimizers.hyper import HyperOptimizer
     opt = HyperOptimizer(
       methods=optimizer,
       parallel=False,

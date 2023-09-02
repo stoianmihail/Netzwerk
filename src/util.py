@@ -76,7 +76,7 @@ def translate_edges(n, edges, open_legs):
   inputs, output, size_dict = [], [], {}
 
   # Build the inputs.
-  d = build_adj(n, edges)
+  d = build_adj(n, edges, open_legs)
   for vertex in d:
     input = [oe.get_symbol(edge_index) for edge_index in d[vertex]]
     inputs.append(input)

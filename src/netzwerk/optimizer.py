@@ -41,16 +41,17 @@ class DynamicProgramming(oe.paths.PathOptimizer):
 # Map the name of the optimizers to their implementation.
 
 optimizers = {
-  # 'tensor-ikkbz' : TensorIKKBZ(),
   'greedy' : 'greedy',
-  # 'lindp' : LinDP(),
-  # 'goo' : Greedy(),
-  # 'custom' : Custom(),
   'tensor-ikkbz-parallel' : ParallelTensorIKKBZ(),
   'lindp-parallel' : ParallelLinDP(),
   'custom-random-greedy' : CustomRandomGreedy(),
   'dp' : DynamicProgramming()
 }
+
+own_optimizers = [
+  'tensor-ikkbz-parallel',
+  'lindp-parallel'
+]
 
 def fetch_optimizer(name):
   if name in optimizers:
@@ -74,18 +75,24 @@ def fetch_package_optimizers(package):
 # Setup Cotengra.
 
 import functools
-from cotengra import hyper
+from cotengra.hyperoptimizers import hyper
 from cotengra.core import ContractionTree
 
 def general_optimizer(meta_fn, algo, inputs, output, size_dict):
   print(f'%%%%%%%%%%%%%% {algo.upper()} %%%%%%%%%%%%%%')
-  ssa_path = netzwerk.contraction_order(inputs, output, size_dict, algo, use_ssa=True)
+  if algo in own_optimizers:
+    ssa_path = netzwerk.contraction_order(inputs, output, size_dict, algo, use_ssa=True)
+  else:
+    ssa_path = optimizers[algo](inputs, output, size_dict)
   return meta_fn(inputs, output, size_dict, ssa_path=ssa_path)
 
 # Register the algorithms.
 for opt in fetch_package_optimizers('cotengra'):
-  if opt == 'greedy':
+  # Skip registering optimizers supported by default.
+  if isinstance(optimizers[opt], str):
     continue
+
+  # Register hyper function.
   hyper.register_hyper_function(
     name=opt,
     ssa_func=functools.partial(general_optimizer, ContractionTree.from_path, opt),

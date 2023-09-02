@@ -6,8 +6,8 @@ A collection of state-of-the-art contraction ordering algorithms
 
 $\large \textcolor{#0065bd}{\texttt{Netzwerk}}$ hosts optimal and near-optimal algorithms for tensor network contraction ordering:
 
-* $\texttt{TensorIKKBZ}$: Optimal linear contraction orders for tree tensor networks
-* $\texttt{LinDP}$: Optimal general contraction trees _given_ the linear contraction orders of $\texttt{TensorIKKBZ}$
+* $\large \texttt{TensorIKKBZ}$: Optimal linear contraction orders for tree tensor networks
+* $\large \texttt{LinDP}$: Optimal general contraction trees _given_ the linear contraction orders of $\large \texttt{TensorIKKBZ}$
 
 ## Setup
 
