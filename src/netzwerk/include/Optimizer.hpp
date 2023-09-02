@@ -6,7 +6,9 @@ class TensorNetwork;
 
 #include "BitSet.hpp"
 #include "Util.hpp"
+
 #include <unordered_map>
+#include <functional>
 
 #define DEBUG_COSTS 0
 #define ENABLE_LinDP_OUTER_PRODUCTS 0

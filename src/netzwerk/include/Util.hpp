@@ -3,12 +3,13 @@
 
 #include "Common.hpp"
 
+#include <filesystem>
 #include <iostream>
 #include <fstream>
+#include <cstring>
 #include <chrono>
 #include <vector>
 #include <limits>
-#include <filesystem>
 #include <ctime>
 
 namespace fs = std::filesystem;
