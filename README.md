@@ -1,4 +1,4 @@
-# <tt style="color: #0065BD">Netzwerk</tt>
+# <code style="color:#0065BD">Netzwerk</code>
 
 A collection of state-of-the-art contraction ordering algorithms. Plug-in for [`opt_einsum`](https://github.com/dgasmith/opt_einsum) and [`cotengra`](https://github.com/jcmgray/cotengra).
 - Optimal and near-optimal algorithms for several classes of tensor networks
