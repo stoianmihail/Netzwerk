@@ -33,7 +33,17 @@ versioneer install
 pip3 install -e .
 ```
 
-## Generation
+## Usage
+
+Make sure that `opt_einsum` and `cotengra` are imported _before_ `netzwerk`, as follows:
+
+```
+import opt_einsum as oe
+import cotengra as ctg
+import netzwerk
+```
+
+## Data Generation
 
 Example: generate FTPS of up to 100 tensors.
 
