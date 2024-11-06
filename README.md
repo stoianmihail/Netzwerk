@@ -30,7 +30,7 @@ The following initializes the package, assuming you are still in `build`:
 ```
 cd ../../
 versioneer install
-pip3 install -e .
+pip3 install .
 ```
 
 ## Usage
