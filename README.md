@@ -71,4 +71,25 @@ The results will be stored in `results`. For the Sycamore circuit, simply run
 
 Use the following notebooks to plot the results:
 * `bench-plot.ipynb`: for networks generated via `gen.py`
-* `circuit-plot.ipynb`: for quantum circuits, e.g., Sycamore. 
+* `circuit-plot.ipynb`: for quantum circuits, e.g., Sycamore.
+
+
+## Citation
+
+You can cite `netzwerk` as follows:
+
+```
+@article{tensorikkbz,
+   title={{On the Optimal Linear Contraction Order of Tree Tensor Networks, and Beyond}},
+   volume={46},
+   ISSN={1095-7197},
+   url={http://dx.doi.org/10.1137/23M161286X},
+   DOI={10.1137/23m161286x},
+   number={5},
+   journal={SIAM Journal on Scientific Computing},
+   publisher={Society for Industrial & Applied Mathematics (SIAM)},
+   author={Stoian, Mihail and Milbradt, Richard M. and Mendl, Christian B.},
+   year={2024},
+   month=oct, pages={B647–B668}
+}
+```
